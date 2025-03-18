@@ -12,9 +12,7 @@ public class Vending{
     private static final Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         vendingMachine();
-        
     }
 
     public static void vendingMachine(){
@@ -27,7 +25,8 @@ public class Vending{
     }
 
     public static double insertCoin(){
-        double coin = 0;
+        // Using var for local variable type inference (Java 10+ feature)
+        var coin = 0.0; // Changed from double to var
         if(money>0)
             System.out.println("--insert 0 to select product!");
         System.out.println("<Insert coin>:");
@@ -67,14 +66,15 @@ public class Vending{
         System.out.println("To cancel select: 0");              
         products.forEach(p -> System.err.println(p.getId() + "." + p.getName() + " $" + p.getPrice() + " DLS"));
 
-        double selection;
-        selection = scan.nextDouble();
+        // Using var for local variable type inference (Java 10+ feature)
+        var selection = scan.nextDouble(); // Changed from double to var
 
         if(selection == 0)
             return cancelTransaction(credit);
 
-        boolean prodisPresent = false;
-        double change = 0;
+        // Using var for local variable type inference (Java 10+ feature)
+        var prodisPresent = false; // Changed from boolean to var
+        var change = 0.0; // Changed from double to var
         for(Product prod : products){
             if(selection == prod.getId()){
                 prodisPresent = true;
@@ -128,7 +128,8 @@ class Coin{
     }
 
     public static List<Coin> getCoins(){
-        List<Coin> coins = new ArrayList<>();
+        // Using var for local variable type inference (Java 10+ feature)
+        var coins = new ArrayList<Coin>(); // Changed from List<Coin> to var
         coins.add(new Coin("PENNY", 0.01));
         coins.add(new Coin("NICKEL", 0.05));
         coins.add(new Coin("DIME", 0.1));
@@ -174,7 +175,8 @@ class Product{
     }
 
     public static List<Product> getProdcuts(){
-        List<Product> products = new ArrayList<>();
+        // Using var for local variable type inference (Java 10+ feature)
+        var products = new ArrayList<Product>(); // Changed from List<Product> to var
         products.add(new Product(1,"CANDY", 0.5));
         products.add(new Product(2,"SNACK", 1));
         products.add(new Product(3,"NUTS", 1));
@@ -183,5 +185,4 @@ class Product{
         products.add(new Product(6,"SODA", 0.9));
         return products;
     }
-
 }
