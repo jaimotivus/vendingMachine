@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>net.luna</groupId>
-	<artifactId>vending</artifactId>
+	<artifactId>vendingMachine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>VendingMachine</name>
 	<description>Vending Machine</description>
